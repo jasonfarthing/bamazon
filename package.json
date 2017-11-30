@@ -1,0 +1,23 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "bamazon shop",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonfarthing/bamazon.git"
+  },
+  "author": "JF",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasonfarthing/bamazon/issues"
+  },
+  "homepage": "https://github.com/jasonfarthing/bamazon#readme",
+  "dependencies": {
+    "inquirer": "^4.0.1",
+    "mysql": "^2.15.0"
+  }
+}
