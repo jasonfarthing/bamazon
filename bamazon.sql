@@ -16,7 +16,7 @@ SELECT * FROM products;
 
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ('COFFEE TABLE', 'FURNISHINGS', 299.50, 1);
+VALUES ('COFFEE TABLE', 'FURNISHINGS', 299.55, 1);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ('BLENDER', 'KITCHEN', 69.99, 8);
@@ -28,13 +28,13 @@ INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ('COWBOY BOOTS', 'SHOES', 89.25, 19);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ('GUITAR', 'MUSICAL INSTRUMENTS', 239.00, 3);
+VALUES ('GUITAR', 'MUSICAL INSTRUMENTS', 239.35, 3);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ('TRUMPET', 'MUSICAL INSTRUMENTS', 579.00, 6);
+VALUES ('TRUMPET', 'MUSICAL INSTRUMENTS', 579.99, 6);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ('LEATHER COUCH', 'FURNISHINGS', 1035.00, 2);
+VALUES ('LEATHER COUCH', 'FURNISHINGS', 1035.89, 2);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ('FRYING PAN', 'KITCHEN', 8.75, 47);
