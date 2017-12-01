@@ -14,5 +14,5 @@ User is first shown welcome message with prompt of YES/NO.
             * New product line is shown with updated quantity.
             * Shopping re-sets.
 
-See attached images file for user flow - ![USER FLOW](/userflow.pdf)
+See attached images file for user flow - ![USER FLOW](/bamazonuserflow.pdf)
 
