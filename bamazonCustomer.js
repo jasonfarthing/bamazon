@@ -66,7 +66,7 @@ function updateProduct(itemId, qnty) {
 function queryAllProducts() {
     connection.query("SELECT * FROM products", function (err, res) {
         for (var i = 0; i < res.length; i++) {
-            console.log("-----------------------------");            
+            console.log("-----------------------------");
             console.log(res[i].id + " | " + res[i].product_name + " | " + res[i].department_name + " | " + res[i].price + " | " + res[i].stock_quantity);
             console.log("-----------------------------");
         }
@@ -96,37 +96,61 @@ function yourProduct(product) {
                     type: 'input',
                     name: 'items',
                     message: "Please enter the product ID to continue."
-                }]);
-            
+                }]).then(
+                    inquirer.prompt([
+                        // connection.end();
+                        {
+                            type: 'input',
+                            name: 'items',
+                            message: "Please enter the quantity to purchase."
+                        }]).then(function (answer) {
+                            // if (oldQnty < 1 ){
+                            //     console.log("------------------------------------")
+                            //     console.log("Out of Stock, Thanks for Visiting!")
+                            //     console.log("------------------------------------")
+                            //     connection.end();
+                            // }else{
+                            var newQnty = oldQnty - answer.items;
+                            console.log("==============================================");
+                            console.log("Congrats! You bought it, Your cost is $" + itemPrice * answer.items);
+                            updateProduct(itemId, newQnty);
+                            console.log(res[0].id + " | " + res[0].product_name + " | " + " New Qnty = " + newQnty);
+        
+                            //update item qnty based on how many user bought
+                            //display item line with new info qnty
+                            connection.end();
+                        })
+                );
+
         } else {
             console.log("-----------------------------------");
             console.log(res[0].id + " | " + res[0].product_name + " | " + res[0].department_name + " | " + res[0].price + " | " + res[0].stock_quantity);
             console.log("-----------------------------------");
+
+            inquirer.prompt([
+                // connection.end();
+                {
+                    type: 'input',
+                    name: 'items',
+                    message: "Please enter the quantity to purchase."
+                }]).then(function (answer) {
+                    // if (oldQnty < 1 ){
+                    //     console.log("------------------------------------")
+                    //     console.log("Out of Stock, Thanks for Visiting!")
+                    //     console.log("------------------------------------")
+                    //     connection.end();
+                    // }else{
+                    var newQnty = oldQnty - answer.items;
+                    console.log("==============================================");
+                    console.log("Congrats! You bought it, Your cost is $" + itemPrice * answer.items);
+                    updateProduct(itemId, newQnty);
+                    console.log(res[0].id + " | " + res[0].product_name + " | " + " New Qnty = " + newQnty);
+
+                    //update item qnty based on how many user bought
+                    //display item line with new info qnty
+                    connection.end();
+                })
         }
-        // connection.end();
-        inquirer.prompt([
-            {
-                type: 'input',
-                name: 'items',
-                message: "Please enter the quantity to purchase."
-            }]).then(function (answer) {
-                // if (oldQnty < 1 ){
-                //     console.log("------------------------------------")
-                //     console.log("Out of Stock, Thanks for Visiting!")
-                //     console.log("------------------------------------")
-                //     connection.end();
-                // }else{
-                var newQnty = oldQnty - answer.items;
-                console.log("==============================================");
-                console.log("Congrats! You bought it, Your cost is $" + itemPrice * answer.items);
-                updateProduct(itemId, newQnty);
-                console.log(res[0].id + " | " + res[0].product_name + " | " + " New Qnty = " + newQnty);
-                
-                //update item qnty based on how many user bought
-                //display item line with new info qnty
-                connection.end();
-            }
-            
-    )});
+    });
 
 };
